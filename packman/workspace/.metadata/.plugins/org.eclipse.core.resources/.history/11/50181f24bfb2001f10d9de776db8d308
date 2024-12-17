@@ -1,0 +1,23 @@
+#ifndef PINKY_H
+#define PINKY_H
+
+#include <stdint.h>
+#include <stdbool.h>
+
+/**
+ * @brief Updates Pinky's position and direction based on Pac-Man's position and direction.
+ *
+ * @param g_x        Current X position of Pinky (read-only).
+ * @param g_y        Current Y position of Pinky (read-only).
+ * @param g_dir      Pointer to Pinky's current direction. Updated by this function.
+ * @param g_mv       Pointer to Pinky's movement flag. Updated by this function.
+ * @param pm_x       Current X position of Pac-Man.
+ * @param pm_y       Current Y position of Pac-Man.
+ * @param pm_dir     Current direction of Pac-Man.
+ * @param grid       2D grid representing the game maze. 1 indicates open path, 0 indicates a wall.
+ * @param in_house   Pointer to a flag indicating whether Pinky is inside the ghost house. Updated by this function.
+ */
+void update_pinky_position(uint32_t g_x, uint32_t g_y, uint32_t* g_dir, uint32_t* g_mv,
+                           uint32_t pm_x, uint32_t pm_y, uint32_t pm_dir, int grid[31][28], bool* in_house);
+
+#endif // PINKY_H

@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov 30 11:03:58 2024
+# Process ID: 202924
+# Current directory: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1
+# Command line: vivado.exe -log mb_block_axi_timer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_block_axi_timer_0_0.tcl
+# Log file: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0.vds
+# Journal file: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1\vivado.jou
+# Running On: Winferior, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 6, Host memory: 16943 MB
+#-----------------------------------------------------------
+source mb_block_axi_timer_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 372.602 ; gain = 69.285
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/steff/OneDrive/Documents/ECE385/ip_repo/hdmi_packman_controller_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/steff/Downloads/RD_hdmi_ip2020'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: mb_block_axi_timer_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 3987d407d0fe9dbd to dir: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.cache/ip/2022.2/3/9/3987d407d0fe9dbd/mb_block_axi_timer_0_0.dcp to C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.cache/ip/2022.2/3/9/3987d407d0fe9dbd/mb_block_axi_timer_0_0_sim_netlist.v to C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.cache/ip/2022.2/3/9/3987d407d0fe9dbd/mb_block_axi_timer_0_0_sim_netlist.vhdl to C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.cache/ip/2022.2/3/9/3987d407d0fe9dbd/mb_block_axi_timer_0_0_stub.v to C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.cache/ip/2022.2/3/9/3987d407d0fe9dbd/mb_block_axi_timer_0_0_stub.vhdl to C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_axi_timer_0_0_synth_1/mb_block_axi_timer_0_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP mb_block_axi_timer_0_0, cache-ID = 3987d407d0fe9dbd.
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 11:04:13 2024...

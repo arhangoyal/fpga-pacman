@@ -1,0 +1,246 @@
+#include "pinky.h"
+#include <stdlib.h>  // For abs()
+#include <stdbool.h>
+
+/* Constants defining the game's grid and sprite dimensions */
+#define OFFSET_X 110
+#define OFFSET_Y 8
+#define CELL_SIZE 15
+#define GHOST_SIZE 26    // Assuming the ghost sprite is 26x26 pixels
+#define TARGET_AHEAD 4   // Number of tiles ahead Pinky targets
+
+void update_pinky_position(uint32_t g_x, uint32_t g_y, uint32_t* g_dir, uint32_t* g_mv,
+                           uint32_t pm_x, uint32_t pm_y, uint32_t pm_dir, int grid[31][28], bool* in_house) {
+
+    /*
+     * If Pinky is inside the ghost house, move it upwards until it exits.
+     * Once Pinky exits, set in_house to false to enable normal movement.
+     */
+    if (*in_house) {
+        // Define the exit position (adjust based on your maze design)
+        int exit_row = 13; // Example row where Pinky should exit
+        int ghost_boardy = g_y - OFFSET_Y;
+        int ghost_row = ghost_boardy / CELL_SIZE;
+
+        if (ghost_row > exit_row) {
+            *g_dir = 3; // 3: Up
+            *g_mv = 1;  // Start moving
+        } else {
+            // Pinky has exited the ghost house
+            *in_house = false;
+            *g_mv = 1;  // Ensure Pinky starts moving
+        }
+        return;
+    }
+
+    /*
+     * Pinky is outside the ghost house. Proceed with targeting and movement.
+     */
+
+    // Calculate Pinky's position on the grid
+    int ghost_boardx = g_x - OFFSET_X;
+    int ghost_boardy = g_y - OFFSET_Y;
+    int ghost_row = ghost_boardy / CELL_SIZE;
+    int ghost_col = ghost_boardx / CELL_SIZE;
+
+    // Calculate Pac-Man's position on the grid
+    int pm_boardx = pm_x - OFFSET_X;
+    int pm_boardy = pm_y - OFFSET_Y;
+    int pm_row = pm_boardy / CELL_SIZE;
+    int pm_col = pm_boardx / CELL_SIZE;
+
+    /*
+     * Pinky's targeting logic:
+     * Targets four tiles ahead of Pac-Man's current direction.
+     * This mimics Pinky's behavior in the original game.
+     */
+    int target_row = pm_row;
+    int target_col = pm_col;
+
+    switch(pm_dir) {
+        case 0: // Right
+            target_col += TARGET_AHEAD;
+            break;
+        case 1: // Down
+            target_row += TARGET_AHEAD;
+            break;
+        case 2: // Left
+            target_col -= TARGET_AHEAD;
+            break;
+        case 3: // Up
+            target_row -= TARGET_AHEAD;
+            break;
+    }
+
+    // Ensure target coordinates are within the grid bounds
+    if (target_row < 0) target_row = 0;
+    if (target_row >= 31) target_row = 30;
+    if (target_col < 0) target_col = 0;
+    if (target_col >= 28) target_col = 27;
+
+    // Calculate the differences between Pinky's current position and the target position
+    int delta_row = target_row - ghost_row;
+    int delta_col = target_col - ghost_col;
+    int abs_delta_row = abs(delta_row);
+    int abs_delta_col = abs(delta_col);
+
+    // Determine Pinky's bounding box positions
+    int ghost_top = ghost_boardy;
+    int ghost_bottom = ghost_boardy + GHOST_SIZE;
+    int ghost_left = ghost_boardx;
+    int ghost_right = ghost_boardx + GHOST_SIZE;
+
+    int ghost_top_g = ghost_top / CELL_SIZE;
+    int ghost_bottom_g = ghost_bottom / CELL_SIZE;
+    int ghost_left_g = ghost_left / CELL_SIZE;
+    int ghost_right_g = ghost_right / CELL_SIZE;
+
+    int ghost_top_i = ghost_top % CELL_SIZE;
+    int ghost_bottom_i = ghost_bottom % CELL_SIZE;
+    int ghost_left_i = ghost_left % CELL_SIZE;
+    int ghost_right_i = ghost_right % CELL_SIZE;
+
+    int collision = 0;
+
+    /*
+     * Collision Detection:
+     * Determine if Pinky will collide with a wall in its current direction.
+     * If a collision is imminent, stop movement and decide a new direction.
+     */
+    switch (*g_dir) {
+        case 0: // Right
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_right_g];
+            if (collision && ghost_right_i >= 4) {
+                *g_mv = 0;
+            }
+            break;
+        case 1: // Down
+            collision = !grid[ghost_bottom_g][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_bottom_i >= 4) {
+                *g_mv = 0;
+            }
+            break;
+        case 2: // Left
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_left_g];
+            if (collision && ghost_left_i <= 11) {
+                *g_mv = 0;
+            }
+            break;
+        case 3: // Up
+            collision = !grid[ghost_top_g][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_top_i <= 11) {
+                *g_mv = 0;
+            }
+            break;
+    }
+
+    /*
+     * Direction Change Logic:
+     * Only change direction when a collision is detected.
+     * Prioritize reducing the larger distance (horizontal or vertical) to the target.
+     */
+    if (*g_mv == 0) {
+        int directions[2];
+
+        // Decide which axis to prioritize based on larger absolute delta
+        if (abs_delta_col > abs_delta_row) {
+            // Prioritize horizontal movement
+            directions[0] = (delta_col > 0) ? 0 : 2; // 0: Right, 2: Left
+            directions[1] = (delta_row > 0) ? 1 : 3; // 1: Down, 3: Up
+        } else {
+            // Prioritize vertical movement
+            directions[0] = (delta_row > 0) ? 1 : 3; // 1: Down, 3: Up
+            directions[1] = (delta_col > 0) ? 0 : 2; // 0: Right, 2: Left
+        }
+
+        // Attempt to set a new valid direction based on priority
+        int dir_found = 0;
+        for (int i = 0; i < 2; i++) {
+            int dir = directions[i];
+            int can_move = 0;
+            collision = 0;
+
+            // Check if the new direction is valid (no wall)
+            switch (dir) {
+                case 0: // Right
+                    collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_right_g];
+                    if (!collision && ghost_right_i >= 4) {
+                        can_move = 1;
+                    }
+                    break;
+                case 1: // Down
+                    collision = !grid[ghost_bottom_g][(ghost_left_g + ghost_right_g) / 2];
+                    if (!collision && ghost_bottom_i >= 4) {
+                        can_move = 1;
+                    }
+                    break;
+                case 2: // Left
+                    collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_left_g];
+                    if (!collision && ghost_left_i <= 11) {
+                        can_move = 1;
+                    }
+                    break;
+                case 3: // Up
+                    collision = !grid[ghost_top_g][(ghost_left_g + ghost_right_g) / 2];
+                    if (!collision && ghost_top_i <= 11) {
+                        can_move = 1;
+                    }
+                    break;
+            }
+
+            if (can_move) {
+                *g_dir = dir;
+                *g_mv = 1;
+                dir_found = 1;
+                break;
+            }
+        }
+
+        /*
+         * If preferred directions are not valid, try other directions.
+         * This ensures Pinky can always find a path unless completely blocked.
+         */
+        if (!dir_found) {
+            for (int dir = 0; dir < 4; dir++) {
+                if (dir != *g_dir && dir != directions[0] && dir != directions[1]) {
+                    int can_move = 0;
+                    collision = 0;
+                    switch (dir) {
+                        case 0: // Right
+                            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_right_g];
+                            if (!collision && ghost_right_i >= 4) {
+                                can_move = 1;
+                            }
+                            break;
+                        case 1: // Down
+                            collision = !grid[ghost_bottom_g][(ghost_left_g + ghost_right_g) / 2];
+                            if (!collision && ghost_bottom_i >= 4) {
+                                can_move = 1;
+                            }
+                            break;
+                        case 2: // Left
+                            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_left_g];
+                            if (!collision && ghost_left_i <= 11) {
+                                can_move = 1;
+                            }
+                            break;
+                        case 3: // Up
+                            collision = !grid[ghost_top_g][(ghost_left_g + ghost_right_g) / 2];
+                            if (!collision && ghost_top_i <= 11) {
+                                can_move = 1;
+                            }
+                            break;
+                    }
+                    if (can_move) {
+                        *g_dir = dir;
+                        *g_mv = 1;
+                        break;
+                    }
+                }
+            }
+        }
+    } else {
+        // Continue moving in the current direction
+        *g_mv = 1;
+    }
+}

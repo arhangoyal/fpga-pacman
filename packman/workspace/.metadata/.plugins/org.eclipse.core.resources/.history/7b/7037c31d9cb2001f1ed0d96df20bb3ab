@@ -1,0 +1,61 @@
+#include "ghost_movement.h"
+#include <stdlib.h>
+
+// Function to move Blinky toward Pac-Man's position
+void update_blinky_position(uint32_t g_x, uint32_t g_y, uint32_t* g_dir, uint32_t* g_mv,
+                            uint32_t pm_x, uint32_t pm_y, int grid[31][28]) {
+
+    int ghost_row = (g_y - 8) / 15;
+    int ghost_col = (g_x - 110) / 15;
+
+    int target_row = (pm_y - 8) / 15;
+    int target_col = (pm_x - 110) / 15;
+
+    int delta_row = target_row - ghost_row;
+    int delta_col = -(target_col - ghost_col);
+
+    // Simplified logic to move Blinky towards Pac-Man
+    if (abs(delta_col) > abs(delta_row)) {
+        // Move horizontally if possible
+        if (delta_col > 0 && ghost_col + 1 < 28 && grid[ghost_row][ghost_col + 1] == 1) {
+            *g_dir = 2; // Move Right
+            ghost_col++;
+        } else if (delta_col < 0 && ghost_col - 1 >= 0 && grid[ghost_row][ghost_col - 1] == 1) {
+            *g_dir = 0; // Move Left
+            ghost_col--;
+        } else if (delta_row > 0 && ghost_row + 1 < 31 && grid[ghost_row + 1][ghost_col] == 1) {
+            *g_dir = 1; // Move Down
+            ghost_row++;
+        } else if (delta_row < 0 && ghost_row - 1 >= 0 && grid[ghost_row - 1][ghost_col] == 1) {
+            *g_dir = 3; // Move Up
+            ghost_row--;
+        }
+    } else {
+        // Move vertically if possible
+        if (delta_row > 0 && ghost_row + 1 < 31 && grid[ghost_row + 1][ghost_col] == 1) {
+            *g_dir = 1; // Move Down
+            ghost_row++;
+        } else if (delta_row < 0 && ghost_row - 1 >= 0 && grid[ghost_row - 1][ghost_col] == 1) {
+            *g_dir = 3; // Move Up
+            ghost_row--;
+        } else if (delta_col > 0 && ghost_col + 1 < 28 && grid[ghost_row][ghost_col + 1] == 1) {
+            *g_dir = 2; // Move Right
+            ghost_col++;
+        } else if (delta_col < 0 && ghost_col - 1 >= 0 && grid[ghost_row][ghost_col - 1] == 1) {
+            *g_dir = 0; // Move Left
+            ghost_col--;
+        }
+    }
+
+    // Collision detection with Pac-Man
+    int pm_row = (pm_y - 8) / 15;
+    int pm_col = (pm_x - 110) / 15;
+
+    if (ghost_row == pm_row && ghost_col == pm_col) {
+        // Ghost and Pac-Man have collided
+        *g_mv = 0; // Stop ghost movement
+        // Additional collision handling code can be added here, such as resetting positions or triggering ghost reset
+    } else {
+        *g_mv = 1;
+    }
+}

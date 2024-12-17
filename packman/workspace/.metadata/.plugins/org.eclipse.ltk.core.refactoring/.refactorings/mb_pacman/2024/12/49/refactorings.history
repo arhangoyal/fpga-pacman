@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;mb_pacman/src/ghost_movement.h&apos; to &apos;blinky.h&apos;" description="Rename resource &apos;ghost_movement.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ghost_movement.h" name="blinky.h" stamp="1733370795147" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;mb_pacman/src/ghost_movement.c&apos; to &apos;blinky.c&apos;" description="Rename resource &apos;ghost_movement.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ghost_movement.c" name="blinky.c" stamp="1733370828668" updateReferences="true"/>
+</session>

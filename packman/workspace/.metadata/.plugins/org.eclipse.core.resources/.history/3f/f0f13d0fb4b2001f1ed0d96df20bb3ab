@@ -1,0 +1,91 @@
+#include "ghost_movement.h"
+#include <stdlib.h>
+
+// Function to move Blinky toward Pac-Man's position
+void update_blinky_position(uint32_t g_x, uint32_t g_y, uint32_t* g_dir, uint32_t* g_mv,
+                            uint32_t pm_x, uint32_t pm_y, int grid[31][28]) {
+
+    int ghost_row = (g_y - 8) / 15;
+    int ghost_col = (g_x - 110) / 15;
+
+    int target_row = (pm_y - 8) / 15;
+    int target_col = (pm_x - 110) / 15;
+
+    int delta_row = target_row - ghost_row;
+    int delta_col = -(target_col - ghost_col);
+
+    // Variables to calculate ghost bounds
+    int ghost_top = g_y;
+    int ghost_bottom = g_y + 26;
+    int ghost_left = g_x;
+    int ghost_right = g_x + 26;
+
+    int ghost_top_g = ghost_top / 15;
+    int ghost_bottom_g = ghost_bottom / 15;
+    int ghost_left_g = ghost_left / 15;
+    int ghost_right_g = ghost_right / 15;
+
+    int ghost_top_i = ghost_top % 15;
+    int ghost_bottom_i = ghost_bottom % 15;
+    int ghost_left_i = ghost_left % 15;
+    int ghost_right_i = ghost_right % 15;
+
+    // Check for collision based on current direction
+    int collision = 0;
+    switch (*g_dir) {
+        case 0: // Moving left
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_left_g - 1];
+            if (collision && ghost_left_i <= 11) {
+                collision = 1;
+            }
+            break;
+        case 1: // Moving down
+            collision = !grid[ghost_bottom_g + 1][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_bottom_i >= 4) {
+                collision = 1;
+            }
+            break;
+        case 2: // Moving right
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_right_g + 1];
+            if (collision && ghost_right_i >= 4) {
+                collision = 1;
+            }
+            break;
+        case 3: // Moving up
+            collision = !grid[ghost_top_g - 1][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_top_i <= 11) {
+                collision = 1;
+            }
+            break;
+    }
+
+    // If collision detected, determine new direction based on Manhattan distance to Pac-Man
+    if (collision) {
+        if (abs(delta_col) > abs(delta_row)) {
+            // Move horizontally if possible
+            if (delta_col > 0 && ghost_col + 1 < 28 && grid[ghost_row][ghost_col + 1] == 1) {
+                *g_dir = 2; // Move Right
+            } else if (delta_col < 0 && ghost_col - 1 >= 0 && grid[ghost_row][ghost_col - 1] == 1) {
+                *g_dir = 0; // Move Left
+            } else if (delta_row > 0 && ghost_row + 1 < 31 && grid[ghost_row + 1][ghost_col] == 1) {
+                *g_dir = 1; // Move Down
+            } else if (delta_row < 0 && ghost_row - 1 >= 0 && grid[ghost_row - 1][ghost_col] == 1) {
+                *g_dir = 3; // Move Up
+            }
+        } else {
+            // Move vertically if possible
+            if (delta_row > 0 && ghost_row + 1 < 31 && grid[ghost_row + 1][ghost_col] == 1) {
+                *g_dir = 1; // Move Down
+            } else if (delta_row < 0 && ghost_row - 1 >= 0 && grid[ghost_row - 1][ghost_col] == 1) {
+                *g_dir = 3; // Move Up
+            } else if (delta_col > 0 && ghost_col + 1 < 28 && grid[ghost_row][ghost_col + 1] == 1) {
+                *g_dir = 2; // Move Right
+            } else if (delta_col < 0 && ghost_col - 1 >= 0 && grid[ghost_row][ghost_col - 1] == 1) {
+                *g_dir = 0; // Move Left
+            }
+        }
+    }
+
+    // Update ghost movement
+    *g_mv = 1;
+}

@@ -1,0 +1,10 @@
+#ifndef GHOST_MOVEMENT_H
+#define GHOST_MOVEMENT_H
+
+#include <stdint.h>
+
+// Function to update the movement of the red ghost (Blinky)
+void update_blinky_position(uint32_t* g_x, uint32_t* g_y, uint32_t* g_dir, uint32_t* g_mv,
+                            uint32_t pm_x, uint32_t pm_y, int grid[31][28]);
+
+#endif // GHOST_MOVEMENT_H

@@ -1,0 +1,9 @@
+#ifndef MB_CONTROLLER
+#define MB_CONTROLLER
+	struct CHARACTER_STRUCT {
+		uint32_t pm_x;
+		uint32_t pm_y;
+		uint32_t pm_dir;
+		uint32_t pm_mv;
+	};
+#endif

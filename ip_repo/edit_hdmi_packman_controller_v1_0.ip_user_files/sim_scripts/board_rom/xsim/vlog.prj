@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../hdmi_packman_controller_1_0/src/board_rom/sim/board_rom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

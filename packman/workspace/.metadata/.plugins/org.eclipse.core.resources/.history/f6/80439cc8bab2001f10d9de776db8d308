@@ -1,0 +1,138 @@
+#include "ghost_movement.h"
+#include <stdlib.h>  // For abs()
+#include <limits.h>  // For INT_MAX
+#include <stdio.h>   // For printf (if debugging is needed)
+
+#define OFFSET_X 110
+#define OFFSET_Y 8
+#define CELL_SIZE 15
+
+void update_blinky_position(uint32_t g_x, uint32_t g_y, uint32_t* g_dir, uint32_t* g_mv,
+                            uint32_t pm_x, uint32_t pm_y, int grid[31][28]) {
+
+    // Calculate ghost's position on the board
+    int ghost_boardx = g_x - OFFSET_X;
+    int ghost_boardy = g_y - OFFSET_Y;
+    int ghost_row = ghost_boardy / CELL_SIZE;
+    int ghost_col = ghost_boardx / CELL_SIZE;
+
+    // Calculate Pac-Man's position on the board
+    int pm_boardx = pm_x - OFFSET_X;
+    int pm_boardy = pm_y - OFFSET_Y;
+    int pm_row = pm_boardy / CELL_SIZE;
+    int pm_col = pm_boardx / CELL_SIZE;
+
+    // Map direction indices to row and column deltas
+    int dir_row_delta[4] = {0, 1, 0, -1};  // Right, Down, Left, Up
+    int dir_col_delta[4] = {1, 0, -1, 0};
+
+    // Initialize movement flag to 1 to ensure the ghost moves
+    *g_mv = 1;
+
+    // Determine possible directions (excluding reverse direction)
+    int possible_directions[4] = {0, 0, 0, 0};  // Right, Down, Left, Up
+    int num_possible_directions = 0;
+
+    // Determine the opposite direction
+    int opposite_dir = (*g_dir + 2) % 4;
+
+    // Check each direction for possible movement
+    for (int dir = 0; dir < 4; dir++) {
+        if (dir == opposite_dir) {
+            continue;  // Do not reverse direction
+        }
+
+        int next_row = ghost_row + dir_row_delta[dir];
+        int next_col = ghost_col + dir_col_delta[dir];
+
+        // Check boundaries
+        if (next_row < 0 || next_row >= 31 || next_col < 0 || next_col >= 28) {
+            continue;
+        }
+
+        // Check if the cell is open (not a wall)
+        if (grid[next_row][next_col]) {
+            possible_directions[dir] = 1;
+            num_possible_directions++;
+        }
+    }
+
+    // Decide the best direction
+    int best_direction = *g_dir;
+    int min_distance = INT_MAX;
+
+    // Evaluate possible directions
+    for (int dir = 0; dir < 4; dir++) {
+        if (possible_directions[dir]) {
+            int next_row = ghost_row + dir_row_delta[dir];
+            int next_col = ghost_col + dir_col_delta[dir];
+
+            // Calculate Manhattan distance to Pac-Man
+            int delta_row = pm_row - next_row;
+            int delta_col = pm_col - next_col;
+            int distance = abs(delta_row) + abs(delta_col);
+
+            if (distance < min_distance) {
+                min_distance = distance;
+                best_direction = dir;
+            }
+        }
+    }
+
+    // Update ghost's direction
+    *g_dir = best_direction;
+
+    // Collision Detection (to possibly stop movement)
+    // Adjust ghost position within the cell
+    int ghost_top = ghost_boardy;
+    int ghost_bottom = ghost_boardy + 26;
+    int ghost_left = ghost_boardx;
+    int ghost_right = ghost_boardx + 26;
+
+    int ghost_top_g = ghost_top / CELL_SIZE;
+    int ghost_bottom_g = ghost_bottom / CELL_SIZE;
+    int ghost_left_g = ghost_left / CELL_SIZE;
+    int ghost_right_g = ghost_right / CELL_SIZE;
+
+    int ghost_top_i = ghost_top % CELL_SIZE;
+    int ghost_bottom_i = ghost_bottom % CELL_SIZE;
+    int ghost_left_i = ghost_left % CELL_SIZE;
+    int ghost_right_i = ghost_right % CELL_SIZE;
+
+    int collision = 0;
+
+    switch (*g_dir) {
+        case 0: // Right
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_right_g];
+            if (collision && ghost_right_i >= 4) {
+                *g_mv = 0;
+            }
+            break;
+        case 1: // Down
+            collision = !grid[ghost_bottom_g][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_bottom_i >= 4) {
+                *g_mv = 0;
+            }
+            break;
+        case 2: // Left
+            collision = !grid[(ghost_top_g + ghost_bottom_g) / 2][ghost_left_g];
+            if (collision && ghost_left_i <= 11) {
+                *g_mv = 0;
+            }
+            break;
+        case 3: // Up
+            collision = !grid[ghost_top_g][(ghost_left_g + ghost_right_g) / 2];
+            if (collision && ghost_top_i <= 11) {
+                *g_mv = 0;
+            }
+            break;
+    }
+
+    // If collision, stop movement
+    if (*g_mv == 0) {
+        // The ghost will attempt to recalculate direction in the next update
+    }
+
+    // Optional Debugging Output
+    // printf("Ghost Position: (%d, %d), Dir: %u, MV: %u\n", ghost_row, ghost_col, *g_dir, *g_mv);
+}

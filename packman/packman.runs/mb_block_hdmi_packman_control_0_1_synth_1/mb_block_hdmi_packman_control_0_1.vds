@@ -1,0 +1,806 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov 30 21:01:04 2024
+# Process ID: 139152
+# Current directory: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1
+# Command line: vivado.exe -log mb_block_hdmi_packman_control_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_block_hdmi_packman_control_0_1.tcl
+# Log file: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/mb_block_hdmi_packman_control_0_1.vds
+# Journal file: C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1\vivado.jou
+# Running On: Winferior, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 6, Host memory: 16943 MB
+#-----------------------------------------------------------
+source mb_block_hdmi_packman_control_0_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/steff/OneDrive/Documents/ECE385/ip_repo/hdmi_packman_controller_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/steff/Downloads/RD_hdmi_ip2020'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: mb_block_hdmi_packman_control_0_1
+Command: synth_design -top mb_block_hdmi_packman_control_0_1 -part xc7s50csga324-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 146724
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'reset_ah', assumed default net type 'wire' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0.sv:145]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN0' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:145]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN1' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:146]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN2' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:147]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN3' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:148]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1188.414 ; gain = 407.434
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mb_block_hdmi_packman_control_0_1' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/synth/mb_block_hdmi_packman_control_0_1.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0_AXI' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0_AXI.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0_AXI' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0_AXI.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/VGA_controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/VGA_controller.sv:26]
+WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0.sv:150]
+WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0.sv:150]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/synth/hdmi_tx_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_v1_0' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'srldelay' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/srldelay.v:70]
+INFO: [Synth 8-6157] synthesizing module 'SRL16E' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:131644]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16E' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:131644]
+INFO: [Synth 8-6155] done synthesizing module 'srldelay' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/srldelay.v:70]
+INFO: [Synth 8-6157] synthesizing module 'encode' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'encode__parameterized0' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode__parameterized0' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'encode__parameterized1' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode__parameterized1' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'serdes_10_to_1' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/serdes_10_to_1.v:43]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'serdes_10_to_1' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/serdes_10_to_1.v:43]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:90676]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:90676]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_v1_0' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/synth/hdmi_tx_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0.v:69]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0.v:69]
+INFO: [Synth 8-6157] synthesizing module 'mapper' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:1]
+INFO: [Synth 8-638] synthesizing module 'board_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/board_rom/synth/board_rom.vhd:69]
+	Parameter C_FAMILY bound to: spartan7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: spartan7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: board_rom.mif - type: string 
+	Parameter C_INIT_FILE bound to: board_rom.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 1 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 1 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 307200 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 307200 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 19 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 1 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 1 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 307200 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 307200 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 19 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 1 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 9 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.28488 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/board_rom/synth/board_rom.vhd:234]
+INFO: [Synth 8-256] done synthesizing module 'board_rom' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/board_rom/synth/board_rom.vhd:69]
+WARNING: [Synth 8-7071] port 'wea' of module 'board_rom' is unconnected for instance 'board_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:289]
+WARNING: [Synth 8-7071] port 'dina' of module 'board_rom' is unconnected for instance 'board_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:289]
+WARNING: [Synth 8-7023] instance 'board_rom' of module 'board_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:289]
+INFO: [Synth 8-6157] synthesizing module 'board_palette' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_palette.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'board_palette' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_palette.sv:1]
+INFO: [Synth 8-638] synthesizing module 'pm_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/pm_rom/synth/pm_rom.vhd:69]
+	Parameter C_FAMILY bound to: spartan7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: spartan7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: pm_rom.mif - type: string 
+	Parameter C_INIT_FILE bound to: pm_rom.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 1 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 1 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 8112 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 8112 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 13 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 1 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 1 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 8112 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 8112 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 13 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 1 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     1.194 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/pm_rom/synth/pm_rom.vhd:234]
+INFO: [Synth 8-256] done synthesizing module 'pm_rom' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/pm_rom/synth/pm_rom.vhd:69]
+WARNING: [Synth 8-7071] port 'wea' of module 'pm_rom' is unconnected for instance 'pm_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:303]
+WARNING: [Synth 8-7071] port 'dina' of module 'pm_rom' is unconnected for instance 'pm_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:303]
+WARNING: [Synth 8-7023] instance 'pm_rom' of module 'pm_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:303]
+INFO: [Synth 8-6157] synthesizing module 'pm_palette' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/edit_hdmi_packman_controller_v1_0.srcs/sources_1/imports/pm/pm_palette.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pm_palette' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/edit_hdmi_packman_controller_v1_0.srcs/sources_1/imports/pm/pm_palette.sv:1]
+INFO: [Synth 8-638] synthesizing module 'ghosts_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/synth/ghosts_rom.vhd:69]
+	Parameter C_FAMILY bound to: spartan7 - type: string 
+	Parameter C_XDEVICEFAMILY bound to: spartan7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_AXI_SLAVE_TYPE bound to: 0 - type: integer 
+	Parameter C_USE_BRAM_BLOCK bound to: 0 - type: integer 
+	Parameter C_ENABLE_32BIT_ADDRESS bound to: 0 - type: integer 
+	Parameter C_CTRL_ECC_ALGO bound to: NONE - type: string 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_BYTE_SIZE bound to: 9 - type: integer 
+	Parameter C_ALGORITHM bound to: 1 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 1 - type: integer 
+	Parameter C_LOAD_INIT_FILE bound to: 1 - type: integer 
+	Parameter C_INIT_FILE_NAME bound to: ghosts_rom.mif - type: string 
+	Parameter C_INIT_FILE bound to: ghosts_rom.mem - type: string 
+	Parameter C_USE_DEFAULT_DATA bound to: 0 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_HAS_RSTA bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
+	Parameter C_RSTRAM_A bound to: 0 - type: integer 
+	Parameter C_INITA_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
+	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter C_READ_WIDTH_A bound to: 4 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 6760 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 6760 - type: integer 
+	Parameter C_ADDRA_WIDTH bound to: 13 - type: integer 
+	Parameter C_HAS_RSTB bound to: 0 - type: integer 
+	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
+	Parameter C_RSTRAM_B bound to: 0 - type: integer 
+	Parameter C_INITB_VAL bound to: 0 - type: string 
+	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
+	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
+	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
+	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter C_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter C_READ_WIDTH_B bound to: 4 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 6760 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 6760 - type: integer 
+	Parameter C_ADDRB_WIDTH bound to: 13 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 1 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_INPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
+	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_EN_ECC_PIPE bound to: 0 - type: integer 
+	Parameter C_READ_LATENCY_A bound to: 1 - type: integer 
+	Parameter C_READ_LATENCY_B bound to: 1 - type: integer 
+	Parameter C_HAS_INJECTERR bound to: 0 - type: integer 
+	Parameter C_SIM_COLLISION_CHECK bound to: ALL - type: string 
+	Parameter C_COMMON_CLK bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_COLL bound to: 0 - type: integer 
+	Parameter C_EN_SLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_USE_URAM bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRA_CHG bound to: 0 - type: integer 
+	Parameter C_EN_RDADDRB_CHG bound to: 0 - type: integer 
+	Parameter C_EN_DEEPSLEEP_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
+	Parameter C_COUNT_36K_BRAM bound to: 1 - type: string 
+	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
+	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.481075 mW - type: string 
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/synth/ghosts_rom.vhd:234]
+INFO: [Synth 8-256] done synthesizing module 'ghosts_rom' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/edit_hdmi_packman_controller_v1_0.srcs/sources_1/ip/ghosts_rom/synth/ghosts_rom.vhd:69]
+WARNING: [Synth 8-7071] port 'wea' of module 'ghosts_rom' is unconnected for instance 'ghost0_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:317]
+WARNING: [Synth 8-7071] port 'dina' of module 'ghosts_rom' is unconnected for instance 'ghost0_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:317]
+WARNING: [Synth 8-7023] instance 'ghost0_rom' of module 'ghosts_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:317]
+WARNING: [Synth 8-7071] port 'wea' of module 'ghosts_rom' is unconnected for instance 'ghost1_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:323]
+WARNING: [Synth 8-7071] port 'dina' of module 'ghosts_rom' is unconnected for instance 'ghost1_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:323]
+WARNING: [Synth 8-7023] instance 'ghost1_rom' of module 'ghosts_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:323]
+WARNING: [Synth 8-7071] port 'wea' of module 'ghosts_rom' is unconnected for instance 'ghost2_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:329]
+WARNING: [Synth 8-7071] port 'dina' of module 'ghosts_rom' is unconnected for instance 'ghost2_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:329]
+WARNING: [Synth 8-7023] instance 'ghost2_rom' of module 'ghosts_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:329]
+WARNING: [Synth 8-7071] port 'wea' of module 'ghosts_rom' is unconnected for instance 'ghost3_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:335]
+WARNING: [Synth 8-7071] port 'dina' of module 'ghosts_rom' is unconnected for instance 'ghost3_rom' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:335]
+WARNING: [Synth 8-7023] instance 'ghost3_rom' of module 'ghosts_rom' has 5 connections declared, but only 3 given [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:335]
+INFO: [Synth 8-6155] done synthesizing module 'mapper' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pm_animator' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/pm_animator.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'pm_animator' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/pm_animator.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ghosts_animator' [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/edit_hdmi_packman_controller_v1_0.srcs/sources_1/new/ghosts_animator.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ghosts_animator' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/edit_hdmi_packman_controller_v1_0.srcs/sources_1/new/ghosts_animator.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/hdmi_text_controller_v1_0.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'mb_block_hdmi_packman_control_0_1' (0#1) [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/synth/mb_block_hdmi_packman_control_0_1.sv:53]
+WARNING: [Synth 8-6014] Unused sequential element hdmi_ctl1_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:148]
+WARNING: [Synth 8-6014] Unused sequential element debug_pm_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:174]
+WARNING: [Synth 8-6014] Unused sequential element debug_ghost0_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:175]
+WARNING: [Synth 8-6014] Unused sequential element debug_ghost1_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:176]
+WARNING: [Synth 8-6014] Unused sequential element debug_ghost2_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:177]
+WARNING: [Synth 8-6014] Unused sequential element debug_ghost3_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:178]
+WARNING: [Synth 8-6014] Unused sequential element debug_pellet_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:179]
+WARNING: [Synth 8-6014] Unused sequential element grid_x_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:248]
+WARNING: [Synth 8-6014] Unused sequential element grid_y_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:249]
+WARNING: [Synth 8-6014] Unused sequential element cell_x_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:252]
+WARNING: [Synth 8-6014] Unused sequential element cell_y_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:253]
+WARNING: [Synth 8-6014] Unused sequential element pellet_cell_x_start_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:256]
+WARNING: [Synth 8-6014] Unused sequential element pellet_cell_y_start_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:257]
+WARNING: [Synth 8-6014] Unused sequential element pellet_size_reg was removed.  [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ipshared/22dc/src/board_example.sv:258]
+WARNING: [Synth 8-7129] Port ghost_reset[31] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[30] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[29] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[28] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[27] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[26] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[25] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[24] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[23] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[22] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[21] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[20] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[19] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[18] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[17] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[16] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[15] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[14] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[13] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[12] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[11] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[10] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[9] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[8] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[7] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[6] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[5] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ghost_reset[4] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[31] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[30] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[29] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[28] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[27] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[26] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[25] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[24] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[23] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[22] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[21] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[20] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[19] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[18] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[17] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[16] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[15] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[14] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[13] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[12] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[11] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[10] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[9] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[8] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[7] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[6] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[5] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[4] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[3] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[2] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[1] in module ghosts_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[31] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[30] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[29] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[28] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[27] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[26] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[25] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[24] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[23] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[22] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[21] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[20] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[19] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[18] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[17] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[16] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[15] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[14] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[13] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[12] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[11] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[10] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[9] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[8] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[7] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[6] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[5] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[4] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[3] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[2] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_man[1] in module pm_animator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[3] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[2] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[1] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[0] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[12] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[11] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[10] in module blk_mem_output_block__parameterized1 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:57 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:57 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:57 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.129 . Memory (MB): peak = 1728.281 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'inst/clk_wiz/inst'
+Finished Parsing XDC File [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'inst/clk_wiz/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/steff/OneDrive/Documents/ECE385/packman/packman.gen/sources_1/bd/mb_block/ip/mb_block_hdmi_packman_control_0_1/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mb_block_hdmi_packman_control_0_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mb_block_hdmi_packman_control_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mb_block_hdmi_packman_control_0_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mb_block_hdmi_packman_control_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1728.281 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.151 . Memory (MB): peak = 1728.281 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:01:07 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:01:07 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst/clk_wiz/inst. (constraint file  C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/dont_touch.xdc, line 23).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/ghost0_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/ghost1_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/ghost2_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/ghost3_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/pm_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/nolabel_line196/board_rom. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/clk_wiz. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/vga_to_hdmi. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:01:07 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 10    
+	   2 Input   32 Bit       Adders := 12    
+	   4 Input   13 Bit       Adders := 4     
+	   2 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 2     
+	   5 Input    5 Bit       Adders := 6     
+	   4 Input    5 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 1     
+	   8 Input    4 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 42    
++---Registers : 
+	               32 Bit    Registers := 63    
+	               19 Bit    Registers := 1     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 45    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 117   
+	  13 Input   32 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 4     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 7     
+	  22 Input   10 Bit        Muxes := 1     
+	   4 Input   10 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 278   
+	   2 Input    5 Bit        Muxes := 12    
+	  16 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 29    
+	   2 Input    3 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 126   
+	   4 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP ghost0_rom_address1, operation Mode is: A*(B:0x34).
+DSP Report: operator ghost0_rom_address1 is absorbed into DSP ghost0_rom_address1.
+DSP Report: Generating DSP ghost0_rom_address0, operation Mode is: PCIN+A:B+C.
+DSP Report: operator ghost0_rom_address0 is absorbed into DSP ghost0_rom_address0.
+DSP Report: Generating DSP ghost1_rom_address1, operation Mode is: A*(B:0x34).
+DSP Report: operator ghost1_rom_address1 is absorbed into DSP ghost1_rom_address1.
+DSP Report: Generating DSP ghost1_rom_address0, operation Mode is: PCIN+A:B+C.
+DSP Report: operator ghost1_rom_address0 is absorbed into DSP ghost1_rom_address0.
+DSP Report: Generating DSP ghost2_rom_address1, operation Mode is: A*(B:0x34).
+DSP Report: operator ghost2_rom_address1 is absorbed into DSP ghost2_rom_address1.
+DSP Report: Generating DSP ghost2_rom_address0, operation Mode is: PCIN+A:B+C.
+DSP Report: operator ghost2_rom_address0 is absorbed into DSP ghost2_rom_address0.
+DSP Report: Generating DSP ghost3_rom_address1, operation Mode is: A*(B:0x34).
+DSP Report: operator ghost3_rom_address1 is absorbed into DSP ghost3_rom_address1.
+DSP Report: Generating DSP ghost3_rom_address0, operation Mode is: PCIN+A:B+C.
+DSP Report: operator ghost3_rom_address0 is absorbed into DSP ghost3_rom_address0.
+DSP Report: Generating DSP pm_rom_address2, operation Mode is: A*(B:0x1a).
+DSP Report: operator pm_rom_address2 is absorbed into DSP pm_rom_address2.
+DSP Report: Generating DSP pm_rom_address1, operation Mode is: PCIN+(A:0x0):B+C.
+DSP Report: operator pm_rom_address1 is absorbed into DSP pm_rom_address1.
+DSP Report: Generating DSP pm_rom_address1, operation Mode is: (A:0x1a)*B.
+DSP Report: operator pm_rom_address1 is absorbed into DSP pm_rom_address1.
+DSP Report: Generating DSP pm_rom_address, operation Mode is: PCIN+A*(B:0x4e).
+DSP Report: operator pm_rom_address is absorbed into DSP pm_rom_address.
+DSP Report: operator pm_rom_address0 is absorbed into DSP pm_rom_address.
+DSP Report: Generating DSP pm_rom_address, operation Mode is: PCIN+(A:0x0):B+C.
+DSP Report: operator pm_rom_address is absorbed into DSP pm_rom_address.
+DSP Report: Generating DSP board_rom_address, operation Mode is: C+A*(B:0x280).
+DSP Report: operator board_rom_address is absorbed into DSP board_rom_address.
+DSP Report: operator board_rom_address0 is absorbed into DSP board_rom_address.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:01:30 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mapper      | A*(B:0x34)       | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C       | 30     | 18     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | A*(B:0x34)       | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C       | 30     | 18     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | A*(B:0x34)       | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C       | 30     | 18     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | A*(B:0x34)       | 13     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C       | 30     | 18     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | A*(B:0x1a)       | 13     | 5      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+(A:0x0):B+C | 30     | 13     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | (A:0x1a)*B       | 2      | 5      | -      | -      | 7      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A*(B:0x4e)  | 13     | 7      | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+(A:0x0):B+C | 30     | 13     | 10     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|mapper      | C+A*(B:0x280)    | 10     | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:01:39 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:01:41 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:01:43 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:01:47 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:01:47 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|hdmi_tx_0   | inst/encg/c0_reg_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+----------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mapper      | A*B          | 30     | 6      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A':B'+C | 0      | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mapper      | A*B          | 30     | 6      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A':B'+C | 0      | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mapper      | A*B          | 30     | 6      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A':B'+C | 0      | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mapper      | A*B          | 30     | 6      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A':B'+C | 0      | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|mapper      | A*B          | 13     | 5      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C   | 0      | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | A*B          | 2      | 5      | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A*B     | 13     | 7      | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | PCIN+A:B+C   | 0      | 13     | -      | -      | 13     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|mapper      | C+A*B        | 10     | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     3|
+|2     |CARRY4     |   440|
+|3     |DSP48E1    |    14|
+|7     |LUT1       |   393|
+|8     |LUT2       |   822|
+|9     |LUT3       |   136|
+|10    |LUT4       |   341|
+|11    |LUT5       |   415|
+|12    |LUT6       |  1240|
+|13    |MMCME2_ADV |     1|
+|14    |MUXF7      |   296|
+|15    |MUXF8      |    35|
+|16    |OSERDESE2  |     8|
+|18    |RAMB18E1   |     2|
+|20    |RAMB36E1   |    13|
+|30    |SRL16E     |    39|
+|31    |FDCE       |    64|
+|32    |FDRE       |  1347|
+|33    |FDSE       |   914|
+|34    |IBUF       |     1|
+|35    |OBUFDS     |     4|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 610 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:01:44 . Memory (MB): peak = 1728.281 ; gain = 947.301
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1728.281 ; gain = 947.301
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1728.281 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 805 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 30 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1728.281 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 815c2757
+INFO: [Common 17-83] Releasing license: Synthesis
+88 Infos, 139 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:01:54 . Memory (MB): peak = 1728.281 ; gain = 1321.992
+INFO: [Common 17-1381] The checkpoint 'C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/mb_block_hdmi_packman_control_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_block_hdmi_packman_control_0_1, cache-ID = 73b0b414ec9d8365
+INFO: [Coretcl 2-1174] Renamed 72 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/steff/OneDrive/Documents/ECE385/packman/packman.runs/mb_block_hdmi_packman_control_0_1_synth_1/mb_block_hdmi_packman_control_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mb_block_hdmi_packman_control_0_1_utilization_synth.rpt -pb mb_block_hdmi_packman_control_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 21:03:10 2024...
